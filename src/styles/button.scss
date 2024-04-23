@@ -1,0 +1,43 @@
+%fontStyles{
+    font-family: var(--font-secondary);
+    font-size: 1.125rem;
+    letter-spacing: 0.135rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 30px;
+    height: 3.75rem;
+
+    @extend %fontStyles;
+
+    transition: .4s;
+
+    &.solid1{
+        background: var(--color-black);
+        color: var(--color-white);
+
+        &:hover{
+            filter: brightness(1.1);
+        }
+    }
+
+    &.square{
+        padding: 0;
+        width: 3.75rem;
+    }
+}
+
+.link{
+    @extend %fontStyles;
+    color: var(--color-black);
+
+    &:hover{
+        text-decoration: underline;
+    }
+}

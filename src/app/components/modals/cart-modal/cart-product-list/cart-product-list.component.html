@@ -1,0 +1,35 @@
+<div class="cart-box">
+  <ul *ngIf="cartProductList.length > 0">
+    <li *ngFor="let product of cartProductList">
+      <img [src]="product.img" [alt]="product.name" />
+      <div class="content">
+        <div>
+          <h3 class="title five">{{ product.name }}</h3>
+          <span class="price small">{{
+            product.price.toLocaleString("pt-BR", {
+              style: "currency",
+              currency: "BRL"
+            })
+          }}</span>
+        </div>
+
+        <button
+          (click)="handleRemove(product.id)"
+          aria-label="remove_product"
+          title="Remover produto"
+        >
+          <span class="material-symbols-outlined"> remove </span>
+        </button>
+      </div>
+    </li>
+  </ul>
+  <p class="paragraph" *ngIf="cartProductList.length === 0">Carrinho vazio.</p>
+  <div>
+    <p class="price small">
+      Total:
+      <strong>{{
+        total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
+      }}</strong>
+    </p>
+  </div>
+</div>

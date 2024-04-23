@@ -1,1 +1,28 @@
-<p>product-description-section works!</p>
+<section class="background-white">
+  <div class="container md">
+    <div *ngIf="product">
+      <p class="breadcrumbs menu m-bottom4">
+        <a routerLink="/">Home</a> - {{ product.name }}
+      </p>
+      <div class="flex-box">
+        <div class="left">
+          <img [src]="product.img" [alt]="product.name" />
+        </div>
+        <div class="right">
+          <h1 class="title four m-bottom1">{{ product.name }}</h1>
+          <span class="price">{{
+            product.price.toLocaleString("pt-BR", {
+              style: "currency",
+              currency: "BRL"
+            })
+          }}</span>
+          <button class="btn solid1 m-top3" (click)="handleApp(product)">
+            <span class="material-symbols-outlined"> add_shopping_cart</span>
+            Adicionar ao carrinho
+          </button>
+        </div>
+      </div>
+    </div>
+    <p *ngIf="!product">Carregando...</p>
+  </div>
+</section>

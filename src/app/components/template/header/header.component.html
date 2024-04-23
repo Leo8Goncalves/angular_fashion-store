@@ -1,1 +1,16 @@
-<p>header works!</p>
+<header class="background-white">
+  <div class="container">
+    <div class="flex-box">
+      <a routerLink="/">
+        <img class="logo"
+          src="../../../../assets/FashionLogo.png"
+          alt="Fashion Logo Store"
+        />
+      </a>
+
+      <button (click)="handleOpen()" aria-label="cart" title="Abrir carrinho">
+        <span class="material-symbols-outlined"> shopping_cart </span>
+      </button>
+    </div>
+  </div>
+</header>

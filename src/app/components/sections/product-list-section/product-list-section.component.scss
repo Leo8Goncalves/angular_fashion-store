@@ -1,0 +1,38 @@
+.product-list {
+  display: flex;
+  gap: clamp(30px, 2vw, 40px);
+  overflow: auto;
+  margin-right: -20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+
+  li {
+    min-width: 270px;
+
+    img {
+      border-radius: 20px;
+      width: 100%;
+      height: clamp(310px, 40vw, 380px);
+      object-fit: cover;
+    }
+
+    .button-box {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+  }
+
+  @media (min-width: 720px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    li {
+      min-width: unset;
+    }
+  }
+
+  @media (min-width: 1020px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

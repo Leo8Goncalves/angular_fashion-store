@@ -1,0 +1,9 @@
+<div class="overlay" *ngIf="isCartOpen">
+  <div class="background-white modal" role="dialog">
+    <button class="close-button" (click)="handleClose()" aria-label="Close" title="Fechar">
+      <span class="material-symbols-outlined"> close </span>
+    </button>
+    <h2 class="title three m-bottom2">Carrinho</h2>
+    <app-cart-product-list></app-cart-product-list>
+  </div>
+</div>
